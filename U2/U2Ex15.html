@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U2 Ejercicio 15</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+        var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+
+        function mostrarDias () {
+          for (var i=0; i<diasSemana.length; i++) {
+            document.write ("<p>" + diasSemana [i] + "</p>");
+          }
+          document.write ("<br><br>");
+        }
+
+        function pedirDia () {
+          var dia = prompt ("¿Qué día es hoy?");
+          if (isFinite(dia)) {
+            if (isNaN(dia)) {
+              document.write ("Error, no es un número");
+            } else {
+              document.write ("Hoy es " + diasSemana[dia]);
+            }
+          }
+        }
+
+        mostrarDias();
+        pedirDia();
+    </script>
+
+  </body>
+</html>
