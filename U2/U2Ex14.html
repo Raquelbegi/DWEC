@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U2Ej14</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+    function calculaEdad(anyo) {
+      var d = new Date();
+      var n = d.getFullYear();
+      return n - anyo;
+    }
+
+    var anyoNac = prompt ("¿Año de nacimiento?");
+
+    function saludaEdad (a) {
+      var edad = calculaEdad(a);
+      if (0<edad && edad<=18) {
+        return "Hey";
+      } else if (18<edad && edad<=40) {
+        return "Hola";
+      } else {
+        return "Buenos días";
+      }
+    }
+
+    document.write (saludaEdad(anyoNac));
+
+    </script>
+
+  </body>
+</html>
