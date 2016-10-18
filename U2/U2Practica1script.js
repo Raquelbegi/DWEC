@@ -12,8 +12,7 @@ function consultaPrecios (articulo) {
   return precio[articulo];
 }
 
-//esta función debe mostrar por pantalla un listado
-//con el surtido de todo lo que vende el kiosko junto a su precio correspondiente.
+//esta función debe mostrar por pantalla un listado con el surtido de todo lo que vende el kiosko junto a su precio correspondiente.
 function mostrarSurtido() {
   var producto = generaSurtido();
   for (var i=0; i<producto.length; i++) {

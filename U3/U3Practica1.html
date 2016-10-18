@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U3. Práctica 1</title>
+    <script type="text/javascript">
+      function contarPalabras() {
+        var palabras = new Array();
+        // meter el string en un array
+        palabras = formulario.area.value.split(" ");
+        // Ventanita a abrir
+        var ventana = window.open("", "", "width=300, height=200");
+        var n = palabras.length - 1;
+
+        // variables para palabra larga y corta
+          var pe = 0;
+          var po = 1000;
+          var pa, p;
+
+          // Palabra más larga
+          for (i=0; i<palabras.length; i++) {
+            if (palabras[i].length >= pe) {
+              pe = palabras[i].length;
+              pa = palabras [i];
+            }
+          }
+
+          // Palabra más corta
+          for (i=0; i<palabras.length; i++) {
+            if (palabras[i].length <= po) {
+              po = palabras[i].length;
+              p = palabras [i];
+            }
+          }
+
+          // Ordenar palabras alfabéticamente. Con .join("Separador") se cambia lo que las separa.
+          var orden = palabras.sort();
+
+        ventana.document.write('<meta charset="utf-8">');
+        ventana.document.write('<b>Primera palabra: </b>' + palabras[0] + "<br>");
+        ventana.document.write('<b>Última palabra: </b>' + palabras[n] + "<br>");
+        ventana.document.write('<b>Número de palabras: </b>' + palabras.length + "<br>");
+        ventana.document.write('<b>Palabra con mayor longitud: </b>' + pa + "<br>");
+        ventana.document.write('<b>Palabra con menor longitud: </b>' + p + "<br>");
+        ventana.document.write('<b>Ordenadas alfabeticamente: </b> <br>' + orden.join(" - "));
+
+
+      }
+    </script>
+    <style media="screen">
+      textarea, input {
+        display: block;
+        margin-top: 10px;
+        margin-bottom:10px;
+        padding-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Manipular Arrays</h1>
+    <form name="formulario">
+      <p>Introduce algunas palabras:</p>
+      <textarea name="area" rows="3" cols="40"></textarea>
+      <input type="button" name="boton" value="Aceptar" onclick="contarPalabras()"></input>
+    </form>
+  </body>
+</html>
