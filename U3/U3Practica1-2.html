@@ -16,6 +16,7 @@
     'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z');
     var r;
     var c=0, e=0;
+    var bb = new Array();
 
     function sacarLetra(){
       r = Math.floor(Math.random()*abc.length);
@@ -34,14 +35,19 @@
         if (des[0]==abc[r]){
           c = c + 1;
         } else {
+          bb[e] = abc[i];
           e = e + 1;
+
         }
       }
 
       if(e==0) {
         ventana.document.write ("¡Enhorabuena! Tu puntuación es: " + c);
       } else {
-        ventana.document.write("Has tenido algunos errores: ");
+        ventana.document.write ("Has tenido algunos errores: ");
+        for(var i=0; i<bb.length; i++) {
+          ventana.document.write(bb[i] + " - ");
+        }
       }
     }
 
