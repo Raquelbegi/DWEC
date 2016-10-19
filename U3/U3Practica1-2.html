@@ -12,13 +12,47 @@
       }
     </style>
     <script type="text/javascript">
+    var abc = new Array('a','b','c','d','e','f','g','h','i','j','k','l','m',
+    'n','ñ','o','p','q','r','s','t','u','v','w','x','y','z');
+    var r;
+    var c=0, e=0;
+
+    function sacarLetra(){
+      r = Math.floor(Math.random()*abc.length);
+      document.write("<p>Introduce palabras que empiecen por: " + abc[r] + "</p>");
+    }
+
+    function contarPalabras() {
+      var palabras = new Array();
+      // meter el string en un array
+      palabras = formulario.area.value.split(" ");
+      // Ventanita a abrir
+      var ventana = window.open("", "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,width=300, height=200");
+
+      for(var i=0; i<palabras.length; i++) {
+        var des = palabras[i].split("");
+        if (des[0]==abc[r]){
+          c = c + 1;
+        } else {
+          e = e + 1;
+        }
+      }
+
+      if(e==0) {
+        ventana.document.write ("¡Enhorabuena! Tu puntuación es: " + c);
+      } else {
+        ventana.document.write("Has tenido algunos errores: ");
+      }
+    }
 
     </script>
   </head>
   <body>
     <h1>Manipular Arrays</h1>
+    <script type="text/javascript">
+      sacarLetra();
+    </script>
     <form name="formulario">
-      <p>Introduce palabras que empiecen por:</p>
       <textarea name="area" rows="3" cols="40"></textarea>
       <input type="button" name="boton" value="Aceptar" onclick="contarPalabras()"></input>
     </form>
