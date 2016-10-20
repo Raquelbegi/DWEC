@@ -1,12 +1,47 @@
 <!-- Window y Date
-Cada segundo la ventana va sobreescribiendo el contenido para cargar un nuevo segundo. -->
+Cada segundo la ventana va sobreescribiendo el contenido para cargar un nuevo segundo.
+s se actualiza cada segundo, m cada minuto y h cada hora.-->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
     <title>U3. Práctica 2-1</title>
+    <script type="text/javascript">
+
+    var d = new Date();
+
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+
+    function empezar() {
+      var ventana = window.open("", "", "width=300, height=200");
+
+      d.setHours(00, 00, 00);
+      var s = d.getSeconds();
+      var m = d.getMinutes();
+      var h = d.getHours();
+
+      ventana.document.body.innerHTML = h + ":" + m + ":" + s;
+    }
+
+    function reiniciar() {
+
+    }
+
+    function contar() {
+
+    }
+
+
+    </script>
   </head>
   <body>
+    <h1>Cronómetro</h1>
+    <form name="formulario">
+      <input type="button" name="boton" value="Contar" onclick="empezar()"></input>
+      <input type="button" name="boton" value="Parar"></input>
+    </form>
 
   </body>
 </html>
