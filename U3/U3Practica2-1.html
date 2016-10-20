@@ -7,30 +7,46 @@ s se actualiza cada segundo, m cada minuto y h cada hora.-->
     <meta charset="utf-8">
     <title>U3. Práctica 2-1</title>
     <script type="text/javascript">
+    var crono = new Object();
+    var ventana;
+    var s;
+    var m;
+    var h;
 
-    var d = new Date();
+    crono.empezar=function() {
+      ventana = window.open("", "", "width=300, height=200");
+      ventana.document.body.innerHTML = "00:00:00";
+      crono.d = new Date().getTime();
+      crono.contar();
+    }
 
-    var s = d.getSeconds();
-    var m = d.getMinutes();
-    var h = d.getHours();
+    crono.contar=function() {
+      var t = new Date().getTime();
 
-    function empezar() {
-      var ventana = window.open("", "", "width=300, height=200");
+      var r = new Date(t-crono.d);
+      var s = r.getUTCSeconds();
+      var m = r.getUTCMinutes();
+      var h = r.getUTCHours();
 
-      d.setHours(00, 00, 00);
-      var s = d.getSeconds();
-      var m = d.getMinutes();
-      var h = d.getHours();
+      ventana.document.body.innerHTML = crono.formatear(h) + ":" + crono.formatear(m) + ":" + crono.formatear(s);
+      crono.timer = setTimeout(crono.contar, 1000);
 
+    }
+
+
+    crono.reiniciar=function() {
+      s = "00";
+      m = "00";
+      h = "00";
       ventana.document.body.innerHTML = h + ":" + m + ":" + s;
     }
 
-    function reiniciar() {
 
-    }
-
-    function contar() {
-
+    crono.formatear=function(i) {
+      if (i<10) {
+        i = "0" + i;
+      }
+      return i;
     }
 
 
@@ -39,8 +55,8 @@ s se actualiza cada segundo, m cada minuto y h cada hora.-->
   <body>
     <h1>Cronómetro</h1>
     <form name="formulario">
-      <input type="button" name="boton" value="Contar" onclick="empezar()"></input>
-      <input type="button" name="boton" value="Parar"></input>
+      <input type="button" name="boton" value="Contar" onclick="crono.empezar()"></input>
+      <input type="button" name="boton" value="Parar" onclick="crono.reiniciar()"></input>
     </form>
 
   </body>
