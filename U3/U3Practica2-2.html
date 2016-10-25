@@ -2,13 +2,14 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>U3. Práctica 2-1</title>
+    <title>U3. Práctica 2-2</title>
     <script type="text/javascript">
     var crono = new Object();
     var ventana;
     var s;
     var m;
     var h;
+    var nuevo;
 
     crono.empezar=function() {
       if (ventana==undefined) {
@@ -21,14 +22,20 @@
 
     crono.contar=function() {
       var t = new Date().getTime();
+
       var r = new Date(t-crono.d);
-      var s = r.getUTCSeconds();
-      var m = r.getUTCMinutes();
-      var h = r.getUTCHours();
+      if (nuevo==undefined) {
+        var s = r.getUTCSeconds();
+        var m = r.getUTCMinutes();
+        var h = r.getUTCHours();
+      } else {
+        var s = r.getUTCSeconds() + parseInt(nuevo[2]);
+        var m = r.getUTCMinutes() + parseInt(nuevo[1]);
+        var h = r.getUTCHours() + parseInt(nuevo[0]);
+      }
 
       ventana.document.body.innerHTML = crono.formatear(h) + ":" + crono.formatear(m) + ":" + crono.formatear(s);
       crono.timer = setTimeout(crono.contar, 1000);
-
     }
 
     crono.reiniciar=function() {
@@ -46,14 +53,21 @@
       return i;
     }
 
+    crono.parar=function() {
+      clearTimeout(crono.timer);
+      nuevo = ventana.document.body.innerHTML;
+      nuevo = nuevo.split(":");
+    }
+
 
     </script>
   </head>
   <body>
     <h1>Cronómetro</h1>
     <form name="formulario">
+      <input type="button" name="boton" value="Reiniciar" onclick="crono.reiniciar()"></input>
       <input type="button" name="boton" value="Contar" onclick="crono.empezar()"></input>
-      <input type="button" name="boton" value="Parar" onclick="crono.reiniciar()"></input>
+      <input type="button" name="boton" value="Parar" onclick="crono.parar()"></input>
     </form>
 
   </body>
