@@ -1,4 +1,3 @@
-<!-- Oculta el elemento con id=”resultado”  < Display:none; -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,6 +13,32 @@
       <button type="button" name="button" onclick="mostrar()">Enviar</button>
     </form>
     <p id="resultado">Gracias por participar</p>
+
+    <script type="text/javascript">
+      // Buscar h1 y cambiarlo
+      var he = document.getElementsByTagName("h1");
+      he[0].innerText="Escribe tus sugerencias";
+
+      // Buscar elementos con clase "destacado" y modificar su css
+      var destacados = document.getElementsByClassName("destacado");
+      destacados[0].style.fontWeight="bold";
+
+      // Buscar elementos con id "resultado" y ocultarlo
+      var resul = document.getElementById('resultado');
+      resul.style.display="none";
+
+      // Buscar elementos con name "sugerencia" y añadirle atributo para que sea obligatorios
+      var suge = document.getElementsByName("sugerencia");
+      suge[0].setAttribute("required", "required")
+
+      // Función que busca y hace visible el elemento con id "resultado"
+      function mostrar() {
+        var resul = document.getElementById('resultado');
+        resul.style.display="block";
+      }
+
+
+    </script>
 
   </body>
 </html>
