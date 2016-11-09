@@ -21,5 +21,17 @@ document.getElementsByName("p")[0].style.color="color"
         <button id="actualizar" onclick="recorreTag();">Modificar los párrafos!</button>
       </div>
     </div>
+
+    <script type="text/javascript">
+      function recorreTag() {
+        var pes = document.getElementsByTagName("p");
+        var color = document.getElementsByTagName("input")[0].value;
+        for (var i=0; i<pes.length; i++) {
+          pes[i].innerHTML = ("Este párrafo es el " + (i+1));
+          pes[i].style.color=color;
+        }
+
+      }
+    </script>
   </body>
 </html>
