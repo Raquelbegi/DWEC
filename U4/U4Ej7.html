@@ -17,17 +17,17 @@
     <!--Número de enlaces del tercer párrafo  -->
 
     <script type="text/javascript">
-    // var enlaces = document.getElementsByTagName("a");
-    // var enla = new Array();
-    // var cont = 0;
-    // for (var i=0; i<enlaces.length; i++) {
-    //   enla[i] = enlaces[i].getAttribute("href");
-    //   if(enla[i] == "http://prueba") {
-    //     cont++;
-    //   }
-    // }
-    // var pes = document.getElementsByTagName("p");
-    // var tercero = pes[2].getElementsByTagName("a");
+    var enlaces = document.getElementsByTagName("a");
+    var enla = new Array();
+    var cont = 0;
+    for (var i=0; i<enlaces.length; i++) {
+      enla[i] = enlaces[i].getAttribute("href");
+      if(enla[i] == "http://prueba") {
+        cont++;
+      }
+    }
+    var pes = document.getElementsByTagName("p");
+    var tercero = pes[2].getElementsByTagName("a");
     // document.write ("Número de enlaces: " + enlaces.length);
     // document.write ("<br>El último enlace es: " + enlaces[5].href);
     // document.write ("<br>Número de enlaces que enlazan a http://prueba: " + cont);
