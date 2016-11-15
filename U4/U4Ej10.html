@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Crea elementos del DOM</title>
+    <script type="text/javascript">
+      function creaDOM(){
+        var titular = document.createElement('h1');
+        document.body.appendChild(titular);
+        var texto = "Esto es un titular";
+        var titu = document.createTextNode (texto);
+        titular.appendChild(titu);
+
+        var imagen = document.createElement('img');
+        document.body.appendChild(imagen);
+        imagen.setAttribute("src", "http://www.posicionaweb.mx/imagenes/imagen-corporativa.png");
+
+        var borrar = document.getElementsByTagName('img')[0];
+        borrar.parentNode.removeChild(imagen);
+      }
+    </script>
+  </head>
+  <body onload="creaDOM()">
+  </body>
+</html>
