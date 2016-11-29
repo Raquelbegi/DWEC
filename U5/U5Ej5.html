@@ -1,0 +1,45 @@
+<!-- 5.	Realiza una web con un título a 24px y una imagen con un ancho de 200px.
+ El texto y la imagen deberán duplicar su tamaño cuando el usuario emplee la rueda encima de esos elementos
+ (el título y la imagen respectivamente).
+ Busca información sobre si esta funcionalidad se soporta en todos los navegadores e indica en cuáles si y en cuáles no.
+Can i use -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U5 Ejercicio 5</title>
+  </head>
+  <body>
+    <h1>Esto es un título</h1>
+    <img src="gato.jpg" alt="gato" />
+
+    <script type="text/javascript">
+      var tam = 24;
+      var an = 200;
+
+      document.body.getElementsByTagName('h1')[0].style.fontSize=tam + "px";
+      document.body.getElementsByTagName('img')[0].style.width=an + "px";
+
+      onwheel = function (e) {
+					if (e.wheelDelta > 0) {
+						if (e.target.nodeName == "H1") {
+							tam = tam * 2;
+							e.target.style.fontSize = tam + "px";
+						} else if (e.target.nodeName == "IMG") {
+							an = an * 2;
+							e.target.style.width = an + "px";
+						}
+					} else {
+						if (e.target.nodeName == "H1") {
+							tam = tam/2;
+							e.target.style.fontSize = tam + "px";
+						} else if (e.target.nodeName == "IMG") {
+							an = an/2;
+							e.target.style.width = an + "px";
+						}
+					}
+				}
+    </script>
+
+  </body>
+</html>
