@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U5 Ejercicio 1</title>
+  </head>
+  <body>
+    <img src="oso1.jpg" width="300px">
+
+    <script>
+    var imagen = document.getElementsByTagName('img')[0];
+          imagen.onmouseover = function() {
+            imagen.src="oso2.jpg";
+          }
+          imagen.onmouseout = function() {
+            imagen.src="oso1.jpg";
+          }
+    </script>
+
+  </body>
+</html>
