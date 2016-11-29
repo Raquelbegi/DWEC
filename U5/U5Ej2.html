@@ -15,13 +15,18 @@ b.	Además, escoge un evento de ratón distinto para cada elemento -->
         var pe = document.getElementsByTagName("p")[0];
         pe.innerText = "Soy el nuevo pe!";
             }
+
+        ondblclick = function() {
+          var h1 = document.getElementsByTagName('h1')[0];
+          h1.innerText = "¡Doble click realizado!";
+        }
     </script>
   </head>
   <body>
     <p onclick="pe()">Soy un pe con algo escondido</p>
     <div>Un div sobre el que puedes pasar</div>
-    <h1>Título h1!</h1>
-    <h2>Segundo título h2!</h2>
+    <h1>Dobleclickea en este h1</h1>
+    <h2 onmousedown="h2.innerText = 'El nuevo h2!'">Super h2!</h2>
     <h3>Subtitulo de subtitulo h3</h3>
 
     <script type="text/javascript">
@@ -29,6 +34,8 @@ b.	Además, escoge un evento de ratón distinto para cada elemento -->
     div.onmouseover = function() {
       div.innerText = "¡Cambiando el div!";
     }
+    var h2 = document.getElementsByTagName('h2')[0];
+
     </script>
   </body>
 </html>
