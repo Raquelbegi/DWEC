@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U5 Ejercicio 9</title>
+    <style media="screen">
+      body {
+        text-align: center;
+      }
+
+      #posicion {
+        margin: auto;
+        position: relative;
+        width: 300px;
+        height: 300px;
+      }
+
+      #div {
+        width: 300px;
+        height:300px;
+        border: solid 1px #000;
+        background: yellow;
+        position: absolute;
+      }
+    </style>
+
+    <script type="text/javascript">
+      onkeyup = mover;
+      var movneg= -20;
+      var movpos = 20;
+      var bottom = 0;
+      var left = 0;
+      // var contleft = 0;
+      // var contright = 0;
+      // var conttop = 0;
+      // var contbottom = 0;
+      //
+      // var width = window.innerWidth;
+      // var des = parseInt((width/2 - 150)/20);
+      // var height = window.innerHeight;
+      // var desh = parseInt((height/2 - 150)/20);
+
+      function mover(e) {
+
+        // Mover a la izquierda
+        if (e.keyCode == 37) {
+          // if (contleft<des) {
+            left = left + movneg;
+            div.style.left = left + "px";
+          //   contleft++;
+          //   contright--;
+          // }
+        }
+
+        // Mover a la derecha
+        if (e.keyCode == 39) {
+          // if (contright<des) {
+            left = left + movpos;
+            div.style.left = left + "px";
+          //   contleft--;
+          //   contright++;
+          // }
+        }
+
+        // Mover hacia arriba
+        if (e.keyCode == 38) {
+          // if (conttop<desh) {
+            bottom = bottom + movpos;
+            div.style.bottom = bottom + "px";
+          //   contbottom--;
+          //   conttop++;
+          // }
+        }
+
+        // Mover hacia abajo
+        if (e.keyCode == 40) {
+          // if (contbottom<desh) {
+            bottom = bottom + movneg;
+            div.style.bottom = bottom + "px";
+          //   contbottom++;
+          //   conttop--;
+          // }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Pulsa una flecha</h1>
+    <div id="posicion"><div id="div"></div></div>
+
+  </body>
+</html>

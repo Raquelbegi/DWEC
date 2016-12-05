@@ -1,0 +1,36 @@
+<!-- 10.	Realiza una web que muestre una imagen con un ancho de 150px y que permita hacer zoom hasta 1024px.
+El zoom se hará cuando el usuario pulse las teclas + y se deshará cuando pulse – en incrementos de 25px.
+Como punto de partida, puedes emplear el código siguiente. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U5 Ejercicio 10</title>
+
+    <script type="application/javascript">
+    onload = function() {
+      var tammin = 150;
+      imagen.style.width = tammin + "px";
+
+      onkeypress = function(e) {
+        var tam = parseInt(imagen.style.width.slice(0,-2));
+        if (e.keyCode == 43) {
+          if (tam <= 1024) {
+            tam = tam + 25;
+            imagen.style.width=tam + "px";
+          }
+        }
+        if (e.keyCode == 45) {
+          if (tam > 150) {
+            tam = tam - 25;
+            imagen.style.width=tam + "px";
+          }
+        }
+      }
+    }
+    </script>
+  </head>
+  <body>
+     <img src="gato.jpg" id="imagen">
+  </body>
+</html>

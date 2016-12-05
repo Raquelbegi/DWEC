@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U5 Ejercicio 7</title>
+    <script type="text/javascript">
+    onload = function() {
+      onkeydown = mostrar;
+    }
+
+    var especial;
+    function mostrar(e) {
+      especial = e.altKey || e.ctrlKey || e.shiftKey || e.metaKey;
+      mensaje = "Carácter pulsado: <b>" + e.key + "</b>";
+
+      if (especial){
+        mensaje = mensaje + " es especial";
+      }
+
+        pul.innerHTML = mensaje;
+    }
+
+    </script>
+  </head>
+  <body>
+    <div id="pul">
+
+    </div>
+  </body>
+</html>
